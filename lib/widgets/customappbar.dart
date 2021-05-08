@@ -1,14 +1,16 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_responsive_ui/assets.dart';
 
 class CustomAppBar extends StatelessWidget {
+  final double scroolOffset;
+
+  const CustomAppBar({Key key, this.scroolOffset = 0.0}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
-      color: Colors.grey[800],
+      color:
+          Colors.black.withOpacity((scroolOffset / 350).clamp(0, 1).toDouble()),
       child: SafeArea(
         child: Row(
           children: [
@@ -45,7 +47,8 @@ class _AppbarButton extends StatelessWidget {
       onTap: onTap,
       child: Text(
         title,
-        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        style: TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.black, fontSize: 15),
       ),
     );
   }
