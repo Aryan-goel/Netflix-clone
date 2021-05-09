@@ -55,6 +55,18 @@ class _HomeState extends State<Home> {
                 contentList: previews,
               ),
             ),
+          ),
+          SliverToBoxAdapter(
+            child: ContentList(title: "myList", contentList: myList),
+          ),
+          SliverToBoxAdapter(
+            child: ContentList(
+                title: "Netflix Originals",
+                contentList: originals,
+                isOriginals: true),
+          ),
+          SliverToBoxAdapter(
+            child: ContentList(title: "Trending", contentList: trending),
           )
         ],
       ),
