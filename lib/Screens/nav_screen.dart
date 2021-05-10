@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_netflix_responsive_ui/Screens/homescreen.dart';
+import 'package:flutter_netflix_responsive_ui/cubits/cubits.dart';
 
 class Navscreen extends StatefulWidget {
   @override
@@ -25,7 +27,8 @@ class _NavscreenState extends State<Navscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: _screen[_currentIndex],
+        body: BlocProvider<AppBarCubit>(
+            create: (_) => AppBarCubit(), child: _screen[_currentIndex]),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.black,
