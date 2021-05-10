@@ -48,7 +48,7 @@ class _AppbarButton extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.black, fontSize: 15),
+            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
       ),
     );
   }

@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           SliverToBoxAdapter(
-            child: ContentList(title: "myList", contentList: myList),
+            child: ContentList(title: "MyList", contentList: myList),
           ),
           SliverToBoxAdapter(
             child: ContentList(
@@ -65,8 +65,11 @@ class _HomeState extends State<Home> {
                 contentList: originals,
                 isOriginals: true),
           ),
-          SliverToBoxAdapter(
-            child: ContentList(title: "Trending", contentList: trending),
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            sliver: SliverToBoxAdapter(
+              child: ContentList(title: "Trending", contentList: trending),
+            ),
           )
         ],
       ),
