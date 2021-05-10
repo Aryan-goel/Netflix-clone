@@ -8,7 +8,7 @@ class Navscreen extends StatefulWidget {
 
 class _NavscreenState extends State<Navscreen> {
   final List<Widget> _screen = [
-    Home(),
+    Home(key: PageStorageKey('home Screen')),
     Scaffold(),
     Scaffold(),
     Scaffold(),
@@ -28,6 +28,7 @@ class _NavscreenState extends State<Navscreen> {
         body: _screen[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.black,
           items: _icons
               .map(
                 (title, icon) => MapEntry(
